@@ -20,16 +20,16 @@ public class Teacher {
 
     //오버로드 시 기본 생성자는 하나 만들어 두어야 한다.
     Teacher() {}
-    Teacher(String pName, String pGender, String pSubjectName, String pSubjectCode) {
-        name = pName;
-        gender = pGender;
+    Teacher(String name, String gender, String subjectName, String subjectCode) {
+        this.name = name;
+        this.gender = gender;
 
-        Subject newSubject = new Subject();
+        Subject subject = new Subject();
         // set 사용
-        newSubject.setSubjectName(pSubjectName);
-        newSubject.setSubjectCode(pSubjectCode);
+        subject.setSubjectName(subjectName);
+        subject.setSubjectCode(subjectCode);
 
-        subject = newSubject;
+        this.subject = subject;
     }
     // getter
     public String getName() { return name; }

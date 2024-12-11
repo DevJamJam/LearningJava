@@ -6,10 +6,10 @@ public class Subject {
     private String subjectCode;
 
     // setter
-    void setSubjectName(String pSubjectName) {
-        subjectName = pSubjectName;
+    void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
-    void setSubjectCode(String pSubjectCode) {
-        subjectCode = pSubjectCode;
+    void setSubjectCode(String subjectCode) {
+        this.subjectCode = subjectCode;
     }
 }
