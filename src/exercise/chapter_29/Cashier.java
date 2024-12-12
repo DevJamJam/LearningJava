@@ -34,18 +34,18 @@ public class Cashier {
         return price;
     }
 
-    public void replyCoffeePrice(String coffeeName, int price) {
+    public void replyCoffeePrice(String coffeeName, long price) {
         if(price == 0) {
             System.out.println("캐셔 : 죄송합니다 손님 말씀하신 메뉴 : " + coffeeName + "는 저희 매장에 없습니다.");
         }
         System.out.println("캐셔 : 말씀하신 커피 " + coffeeName + "은 가격이 " + price + "원 입니다.");
     }
 
-    public void addAmount(int money) {
+    public void addAmount(long money) {
         this.salesAmount += money;
     }
     public void sayOrder(String coffeeName) {
-        System.out.println("캐셔 : 커피" + coffeeName + "주문이 들어왔습니다.");
+        System.out.println("캐셔 : 커피 " + coffeeName + " 주문이 들어왔습니다.");
     }
 
     public Coffee wrapUpCoffee(Coffee coffee) {
@@ -54,6 +54,11 @@ public class Cashier {
     }
     public void sayCoffeeReady(Coffee coffee) {
         String coffeeName = coffee.getCoffeeName();
-        System.out.println("캐셔 : 주문하신 커피" + coffeeName + "가 준비 완료 되었습니다.");
+        System.out.println("캐셔 : 주문하신 커피 " + coffeeName + "가 준비 완료 되었습니다.");
+    }
+
+    // 초기값 설정을 위한 setter
+    public void setSalesAmount(long salesAmount) {
+        this.salesAmount = salesAmount;
     }
 }

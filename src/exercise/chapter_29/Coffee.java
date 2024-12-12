@@ -29,4 +29,9 @@ public class Coffee {
     public String getCoffeeName() {
         return coffeeName;
     }
+
+    // 포장여부를 위한 getter
+    public boolean isWrappedUp() {
+        return isWrappedUp;
+    }
 }
