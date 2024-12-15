@@ -7,7 +7,8 @@ public class Fish {
     protected boolean havingPoison; // true : 독이 있다, false : 독이 없다.
     private String StartSpawningDate; // 산란 시작 시기
     private String endSpawningDate; // 산란 종료
-    String leavingSea; // 사는 곳
+    // 쉐도잉 실습을 위한 코드
+    protected String leavingSea; // 사는 곳
 
     // 행위
     void eat(String food) {

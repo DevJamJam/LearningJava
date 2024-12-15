@@ -27,5 +27,35 @@ public class SeaSituation {
         System.out.println("식용 여부 : " + fishChild12.isEatable());
         // 결과 : 물고기(sexual=Female, havingPoison=false,leavingSea=서해)
         // 식용 여부 : false
+
+        // 쉐도잉 실습 자식 물고기 !
+        FishChild fishChild3 = new FishChild(true,"동동해");
+        System.out.println(fishChild3.leavingSea); // 결과 : 동동해
+        fishChild3.printMyInfo();
+        /**
+         *  결과 : 물고기(sexual=null, havingPoison=false,leavingSea=null)
+         *  fishChild 내부 생성자의 this는 자식 class의 this를 바라보지만,
+         *  fishChild3에서 호출하는 메소드 printMyInfo()의 this는 부모의 this를 바라본다.
+         *  이를 쉐도잉 현상 이라고 한다.
+         */
+
+        FishChild fishChild4 = new FishChild();
+        fishChild4.setLeavingSea("서해");
+        fishChild4.setLeavingSeaChild("동해");
+
+        fishChild4.printSea();
+        /**
+         *  결과 :
+         *  물고기(sexual=null, havingPoison=false,leavingSea=서해)
+         *  printSea 내부 myInfo()가 부모에 있는 this.leavingSea 를 바라보기 때문에
+         *  부모의 바다인 서해로 출력
+         *  는 동해 바다 출신이고, 부모 물고기는 서해바다 출신이야.
+         *
+         *  myInfo() override로 변경 후 보여지는 값
+         *  물고기(sexual=null, havingPoison=false,leavingSea=서해)
+         *  는 부모물고기,
+         *  자식 물고기(eatable=false, leavingSea=null)는 동해 바다 출신이고,
+         *  부모 물고기는 서해바다 출신이야.
+         */
     }
 }
