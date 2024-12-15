@@ -7,6 +7,7 @@ public class SeaSituation {
         fish1.setSexual("Male");
         fish1.setLeavingSea("동해");
         fish1.setHavingPoison(false);
+
         FishChild fish2 = new FishChild();
         fish2.setSexual("Female");
         fish2.setLeavingSea("서해");
@@ -17,7 +18,6 @@ public class SeaSituation {
         /**
          *  결과 :
          *  물고기(sexual=Male, havingPoison=false,leavingSea=동해)
-         *
          *  물고기(sexual=Female, havingPoison=true,leavingSea=서해)
          */
         fish2.digging();
@@ -31,5 +31,22 @@ public class SeaSituation {
          *  eatable: true
          */
 
+        System.out.println("독성여부 : " + fish2.isHavingPoison());
+        fish2.becomeDanger();
+        System.out.println("독성여부 : " + fish2.isHavingPoison());
+
+        fish1.eat("새우");
+        fish2.eat("새우");
+
+        /**
+         *  결과 :
+         *  독성여부 : true => becomeDanger동작 전
+         *  독성여부 : false => becomeDanger동작 후
+         *  물고기(sexual=Male, havingPoison=false,leavingSea=동해)
+         *  새우를 먹고 있습니다.
+         *  물고기(sexual=Female, havingPoison=false,leavingSea=서해)
+         *  새우를 맛있게 먹고 있습니다.
+         *  => 같은 eat 이지만 override 되어 fish2는 맛있게 먹고 있습니다로 출력
+         */
     }
 }

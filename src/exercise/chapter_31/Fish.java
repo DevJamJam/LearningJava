@@ -3,13 +3,15 @@ package exercise.chapter_31;
 public class Fish {
     // 속성 : 정보 은닉화 해두기
     private String sexual; // "Male", "Female"
-    private boolean havingPoison; // true : 독이 있다, false : 독이 없다.
+    //상속 실습을 위한 protected로 변경
+    protected boolean havingPoison; // true : 독이 있다, false : 독이 없다.
     private String StartSpawningDate; // 산란 시작 시기
     private String endSpawningDate; // 산란 종료
     String leavingSea; // 사는 곳
+
     // 행위
     void eat(String food) {
-        System.out.printf("물고기는 %s를 먹고 있습니다.\n", food);
+        System.out.printf(myInfo() + "%s를 먹고 있습니다.\n", food);
     }
 
     void swim(int meter) {
@@ -49,5 +51,11 @@ public class Fish {
 
     public void setLeavingSea(String leavingSea) {
         this.leavingSea = leavingSea;
+    }
+
+    // 값을 가져오기 위한 getter
+
+    public boolean isHavingPoison() {
+        return havingPoison;
     }
 }

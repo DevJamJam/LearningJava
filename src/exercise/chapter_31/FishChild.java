@@ -19,4 +19,16 @@ public class FishChild extends Fish {
     public void setEatable(boolean eatable) {
         this.eatable = eatable;
     }
+
+    // 접근제어자 변경으로 바로 접근 하는 방법
+    public void becomeDanger() {
+        this.havingPoison = false;
+    }
+
+    // Override 실습
+    @Override
+    void eat(String food){
+        System.out.printf(myInfo() + "%s를 맛있게 먹고 있습니다.\n", food);
+    }
+
 }
