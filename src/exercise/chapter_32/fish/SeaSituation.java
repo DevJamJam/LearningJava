@@ -57,5 +57,31 @@ public class SeaSituation {
          *  자식 물고기(eatable=false, leavingSea=null)는 동해 바다 출신이고,
          *  부모 물고기는 서해바다 출신이야.
          */
+
+        /**
+         *  타입선언 : 부모, 인스턴스화 : 부모
+         *  타입선언 : 부모, 인스턴스화 : 자식
+         *  타입선언 : 자식, 인스턴스화 : 자식
+         *  타입선언 : 자식, 인스턴스화 : 부모 => 묵시적 변환 X 
+         */
+        Fish fishs1 = new Fish();
+        fishs1.eat("새우");
+        Fish fishs2 = new FishChild();
+        fishs2.eat("새우");
+        FishChild fishs3 = new FishChild();
+        fishs3.eat("새우");
+        // FishChild fishs4 = new Fish(); 
+        // error : 부모클래스는 자식클래스로 선언할 수 없다.
+
+        /**
+         *  결과 :
+         *  물고기(sexual=null, havingPoison=false,leavingSea=null)
+         *  새우를 먹고 있습니다. => 부모의 eat
+         *  물고기(sexual=null, havingPoison=false,leavingSea=null)
+         *  새우를 맛있게 먹고 있습니다. => 자식의 eat
+         *  물고기(sexual=null, havingPoison=false,leavingSea=null)
+         *  새우를 맛있게 먹고 있습니다. => 자식의 eat
+         */
+
     }
 }

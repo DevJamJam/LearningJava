@@ -61,7 +61,6 @@ public class Fish {
 
     // super 확인을 위한 생성자 생성
     Fish() {
-        System.out.println("부모 물고기가 만들어 지고 있습니다.");
     }
 
     public Fish(String sexual, boolean havingPoison, String startSpawningDate, String endSpawningDate, String leavingSea) {
