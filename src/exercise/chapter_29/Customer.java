@@ -1,7 +1,4 @@
-package exercise;
-
-import exercise.chapter_29.Cashier;
-import exercise.chapter_29.Coffee;
+package exercise.chapter_29;
 
 /**
  *  시나리오 참고
