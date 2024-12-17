@@ -1,7 +1,5 @@
 package exercise.chapter_29;
 
-import exercise.Customer;
-
 /**
  *  customer2는 추가로 코드 익히기 위해 생성
  */
