@@ -1,4 +1,4 @@
-package exercise.chpater_35;
+package exercise.chapter_36;
 
 public abstract class Animal {
     protected String gender;

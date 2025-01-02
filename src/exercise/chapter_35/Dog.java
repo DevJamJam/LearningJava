@@ -1,4 +1,4 @@
-package exercise.chpater_35;
+package exercise.chapter_35;
 
 public class Dog extends Animal{
     // 추상화 된 class를 사용해 보기위해 만든 class

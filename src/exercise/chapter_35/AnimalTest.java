@@ -1,4 +1,4 @@
-package exercise.chpater_35;
+package exercise.chapter_35;
 
 public class AnimalTest {
     public static void main(String[] args) {

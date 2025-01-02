@@ -1,6 +1,6 @@
-package exercise.chpater_35;
+package exercise.chapter_36;
 
-public class Bird extends Animal {
+public class Bird extends Animal implements Flyable { // 이미 extends한 뒤여도 interface 추가 가능
     // 속성
     private long weight;
     private String color;
@@ -16,7 +16,8 @@ public class Bird extends Animal {
     public void sleep() {
         System.out.println("새가 잠을 자고 있습니다.\n");
     }
+    @Override
     public void fly(){
-        System.out.println("새가 날고 있습니다.\n");
+        System.out.println("새가 날고 있습니다.");
     }
 }
