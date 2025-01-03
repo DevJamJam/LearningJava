@@ -1,10 +1,6 @@
 package exercise.chapter_37;
 
-public class Female extends FamilyWoman implements FamilyRole,EmployeeRole{
-    // 속성
-    private int age;
-    private String job;
-
+public class FemaleTwo extends FamilyWoman implements FamilyRole,EmployeeRole{
     @Override
     public void workTogether(EmployeeRole employeeRole) {
         String name = employeeRole.getName();
@@ -16,7 +12,7 @@ public class Female extends FamilyWoman implements FamilyRole,EmployeeRole{
         return this.name;
     }
 
-    public Female(String name) {
+    public FemaleTwo(String name) {
         this.name = name;
     }
 }

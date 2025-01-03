@@ -10,7 +10,8 @@ public class InterfaceTest {
         female.takeCareHusband(husband);
         /**
          *  결과
-         *  우리 가족 사랑해!
+         *  우리 아가 사랑해 (default실습결과)
+         *  자기 사랑해 (default실습결과)
          *  포도 을 케어합니다.
          */
 
@@ -29,12 +30,12 @@ public class InterfaceTest {
 
         // 회사원
         EmployeeRole femaleEmployee = (EmployeeRole) female;
-        EmployeeRole togetherEmployee = new Female("하다");
-        femaleEmployee.workTogether(togetherEmployee);
+        EmployeeRole femaleEmployeeTwo = new FemaleTwo("나나");
+        femaleEmployee.workTogether(femaleEmployeeTwo);
 
         /**
          *  결과 :
-         *  하다와 함께 업무를 하고 있습니다.
+         *  나나와 함께 업무를 하고 있습니다.
          */
     }
 }
