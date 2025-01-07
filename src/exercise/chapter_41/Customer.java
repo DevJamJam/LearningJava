@@ -1,0 +1,49 @@
+package exercise.chapter_41;
+
+/**
+ *  시나리오
+ *  생성시 등급은 SILVER
+ *  포인트 비율 0.01
+ *  고객 ID = Customer + 숫자
+ *  추가 구현 고객 ID 가 10 미만일 때 0을 붙여서 출력 될 수 있도록 진행 해보기
+ */
+public class Customer {
+    // 속성
+    // 순차 생성되는 고객 ID를 위한 static
+    static int serialNums = 1;
+
+    protected String customerID;
+    protected String customerName;
+    protected String customerGrade;
+
+    protected int bonusPoint; // 보너스 포인트
+    protected double bonusPointRatio; // 보너스 포인트 적립 비율
+
+    // 행위
+    public int calculatePrice(int price) {
+        // 대부분 코드 구현상 내가 가지고 있는 속성은 내가 계산하는 것이 편하다.
+        this.bonusPoint += price * bonusPointRatio; // 보너스 포인트 계산
+        return price;
+    }
+
+    // 생성자
+    Customer() {
+
+    }
+    Customer(String name){
+        if(serialNums < 10) {
+            this.customerID = "Customer0" + serialNums++;
+        } else {
+            this.customerID = "Customer" + serialNums++;
+        }
+        this.customerName = name;
+        this.customerGrade = "SILVER";
+        this.bonusPointRatio = 0.01;
+        this.bonusPoint = 0;
+    }
+
+    void printMyInfo(){
+        System.out.printf("Customer (customer ID: %s , name = %s , customerGrade=%s, bonusPoint = %d)\n",
+                this.customerID,this.customerName,this.customerGrade,this.bonusPoint);
+    }
+}
