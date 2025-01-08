@@ -30,6 +30,11 @@ public class Customer {
     Customer() {
 
     }
+    public Customer(String customerID, String customerName) {
+        this(customerName);
+        this.customerID = customerID;
+    }
+
     Customer(String name){
         if(serialNums < 10) {
             this.customerID = "Customer0" + serialNums++;
@@ -45,5 +50,31 @@ public class Customer {
     void printMyInfo(){
         System.out.printf("Customer (customer ID: %s , name = %s , customerGrade=%s, bonusPoint = %d)\n",
                 this.customerID,this.customerName,this.customerGrade,this.bonusPoint);
+    }
+
+
+    // class object 메서드 오버라이딩 실습
+    @Override
+    public String toString() {
+        return String.format("Customer (customer ID: %s , name = %s , customerGrade=%s, bonusPoint = %d)\n",
+                this.customerID,this.customerName,this.customerGrade,this.bonusPoint);
+    }
+
+    // equals 오버라이딩 실습
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (obj instanceof Customer) {
+            Customer customer = (Customer) obj;
+            if (customer.customerID == this.customerID) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 }
